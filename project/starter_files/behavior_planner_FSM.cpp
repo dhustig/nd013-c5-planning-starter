@@ -77,8 +77,18 @@ double BehaviorPlannerFSM::get_look_ahead_distance(const State& ego_state) {
   // TODO-Lookahead: One way to find a reasonable lookahead distance is to find
   // the distance you will need to come to a stop while traveling at speed V and
   // using a comfortable deceleration.
-  // I'm trying _lookahead_time first, for this. But if it's not enough time I will declare my own variable t with a value instead...
-  auto look_ahead_distance = velocity_mag * _lookahead_time + 0.5 * accel_mag * std::pow(_lookahead_time, 2);  
+  // Might also use a (different) constant value instead of _lookahead_time
+  double t = _lookahead_time;
+
+  auto vel_u = ego_state.velocity / velocity_mag;
+
+  double tot_acc = ego_state.acceleration.x * vel_u.x + 
+                   ego_state.acceleration.y * vel_u.y + 
+                   ego_state.acceleration.z * vel_u.z;
+
+  auto look_ahead_distance = velocity_mag * t + 0.5 * tot_acc * t * t;
+
+  //auto look_ahead_distance = std::pow(velocity_mag,2) / (2 * accel_mag);//velocity_mag * _lookahead_time + 0.5 * accel_mag * std::pow(_lookahead_time, 2);  
 
   // LOG(INFO) << "Calculated look_ahead_distance: " << look_ahead_distance;
 
