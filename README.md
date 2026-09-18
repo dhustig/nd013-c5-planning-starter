@@ -1,19 +1,25 @@
-# Project: Motion Planning and Decision Making for Autonomous Vehicles
+# Motion Planning and Decision Making for Autonomous Vehicles
 
-In this project, you will implement two of the main components of a traditional hierarchical planner: The Behavior Planner and the Motion Planner. Both will work in unison to be able to:
+In this project, I implemented two of the main components of a traditional hierarchical planner: The Behavior Planner and the Motion Planner. Both work in unison to be able to:
 
-1. Avoid static objects (cars, bicycles and trucks) parked on the side of the road (but still invading the lane). The vehicle must avoid crashing with these vehicles by executing either a “nudge” or a “lane change” maneuver.
+1. Avoid static objects (cars, bicycles and trucks) parked on the side of the road (but still invading the lane). The vehicle avoids crashing with these vehicles by executing either a “nudge” or a “lane change” maneuver.
 
 2. Handle any type of intersection (3-way, 4-way intersections and roundabouts) by STOPPING in all of them (by default)
 
 3. Track the centerline on the traveling lane.
 
-To accomplish this, you will implement:
+To accomplish this, I implemented:
 
 * Behavioral planning logic using Finite State Machines - FSM
 * Static objects collision checking.
 * Path and trajectory generation using cubic spirals
-* Best trajectory selection though a cost function evaluation. This cost function will mainly perform a collision check and a proximity check to bring cost higher as we get closer or collide with objects but maintaining a bias to stay closer to the lane center line.
+* Best trajectory selection though a cost function evaluation. This cost function mainly performs a collision check and a proximity check to bring cost higher as the ego vehicle gets closer or collides with objects but maintaining a bias to stay closer to the lane center line.
+
+# Results
+The parameters selected are `P_NUM_PATHS` = 7 and `P_NUM_POINTS_IN_SPIRAL` = 20, as listed in `/project/starter_files/planning_params.h`.
+
+A video of the results can be seen by clicking on the thumbnail below: 
+[![Watch the video](https://img.youtube.com/vi/gPZc9hHw2Hk/maxresdefault.jpg)](https://www.youtube.com/watch?v=gPZc9hHw2Hk)
 
 ## Dependency - Udacity VM Workspace
 The state code in this repository is aligned to run on the Udacity VM workspace. Refer to the classroom page **Ubuntu VM Workspace - Overview** to learn how to access the VM workspace and its restrictions and best practices. 
