@@ -22,7 +22,7 @@ A video of the results can be seen by clicking on the thumbnail below:
 [![Watch the video](https://img.youtube.com/vi/gPZc9hHw2Hk/maxresdefault.jpg)](https://www.youtube.com/watch?v=gPZc9hHw2Hk)
 
 ## Dependency - Udacity VM Workspace
-The state code in this repository is aligned to run on the Udacity VM workspace. Refer to the classroom page **Ubuntu VM Workspace - Overview** to learn how to access the VM workspace and its restrictions and best practices. 
+The code in this repository is aligned to run on the Udacity VM workspace. Refer to the classroom page **Ubuntu VM Workspace - Overview** to learn how to access the VM workspace and its restrictions and best practices. 
 
 However, to set up your local machine with the necessary tools, you must have either *Windows Subsystem for Linux* (WSL) or *Ubuntu 20.04* or *18.04 LTS*. Below is the list of tools installed in the Udacity VM workspace that you should install on your local machine.
 
@@ -115,6 +115,18 @@ However, to set up your local machine with the necessary tools, you must have ei
 
 
 # Instructions
+The following files in this zip folder should be replaced with the corresponding files in the starter code: 
+
+.cpp files:
+`behavior_planner_FSM.cpp`,
+`cost_functions.cpp`,
+`motion_planner.cpp`, and 
+`velocity_profile_generator.cpp`
+
+.h files:
+`planning_params.h`
+
+
 The sections ahead will guide you through the steps to build and run the project. 
 
 
